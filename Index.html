@@ -1,1 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delhi Classes Khatima | Learn. Prepare. Achieve.</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b1736;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #4da3ff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 7%;
+      background: linear-gradient(135deg, #08132f, #123b78);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      padding: 8px 14px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #55b7ff;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #dce8f8;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .primary {
+      background: #2f9cff;
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid rgba(255,255,255,.5);
+      color: white;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #68758a;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 10px 35px rgba(20,40,80,.08);
+    }
+
+    .about-box h3 {
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 15px;
+    }
+
+    .stat {
+      background: #0b1736;
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-size: 30px;
+      color: #55b7ff;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(20,40,80,.07);
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #68758a;
+    }
+
+    .faculty {
+      background: #eef4fb;
+    }
+
+    .faculty-card {
+      text-align: center;
+    }
+
+    .avatar {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      background: #dcecff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      font-size: 32px;
+    }
+
+    .reviews .card {
+      border-left: 4px solid #2f9cff;
+    }
+
+    .stars {
+      color: #f5a623;
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .gallery div {
+      height: 190px;
+      border-radius: 15px;
+      background: linear-gradient(135deg,#dcecff,#a9cfff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #234;
+      font-weight: bold;
+    }
+
+    .contact {
+      background: #0b1736;
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,.08);
+      padding: 30px;
+      border-radius: 18px;
+    }
+
+    .contact-card p {
+      margin: 14px 0;
+      color: #d8e2f1;
+    }
+
+    .contact-card a {
+      color: #55b7ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #060d20;
+      color: #9caac0;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    .mobile-note {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #9eb1ca;
+    }
+
+    @media(max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      .about,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+    }
+
+    @media(max-width: 500px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Delhi <span>Classes</span></div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#faculty">Faculty</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="badge">📍 Khatima, Uttarakhand</div>
+
+    <h1>
+      Learn Better.<br>
+      Prepare <span>Smarter.</span>
+    </h1>
+
+    <p>
+      A focused learning environment for students who want to
+      understand concepts, prepare confidently and achieve their goals.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="#courses">Explore Courses</a>
+      <a class="btn secondary" href="#contact">Contact Us</a>
+    </div>
+
+    <div class="mobile-note">
+      Demo website — institute details can be customized.
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+
+  <div class="section-title">
+    <h2>About Delhi Classes</h2>
+    <p>Focused learning. Better preparation. Stronger foundations.</p>
+  </div>
+
+  <div class="about">
+
+    <div class="about-box">
+      <h3>Building confidence through learning.</h3>
+
+      <p>
+        Delhi Classes Khatima is presented in this demo as a
+        student-focused coaching institute offering academic and
+        competitive-exam preparation.
+      </p>
+
+      <br>
+
+      <p>
+        Our approach combines concept clarity, regular practice,
+        doubt solving and structured preparation.
+      </p>
+    </div>
+
+    <div class="stats">
+
+      <div class="stat">
+        <h3>4.9★</h3>
+        <p>Public Rating</p>
+      </div>
+
+      <div class="stat">
+        <h3>300+</h3>
+        <p>Public Reviews</p>
+      </div>
+
+      <div class="stat">
+        <h3>11–12</h3>
+        <p>Academic Classes</p>
+      </div>
+
+      <div class="stat">
+        <h3>100%</h3>
+        <p>Focus on Learning</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="courses">
+
+  <div class="section-title">
+    <h2>Our Courses</h2>
+    <p>Programs shown for demonstration purposes.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">📘</div>
+      <h3>Class XI</h3>
+      <p>
+        Build strong academic fundamentals and develop
+        better subject understanding.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h3>Class XII</h3>
+      <p>
+        Structured preparation focused on concepts,
+        revision and examinations.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Commerce</h3>
+      <p>
+        Concept-focused learning for commerce students
+        with regular practice and doubt support.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏆</div>
+      <h3>SSC Preparation</h3>
+      <p>
+        Practice-oriented preparation for competitive
+        examination aspirants.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Test & Revision</h3>
+      <p>
+        Regular practice sessions and revision-focused
+        preparation.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💡</div>
+      <h3>Doubt Support</h3>
+      <p>
+        Dedicated support to help students strengthen
+        difficult concepts.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="faculty" class="faculty">
+
+  <div class="section-title">
+    <h2>Meet Our Faculty</h2>
+    <p>Demo faculty profiles — replace with actual details later.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card faculty-card">
+      <div class="avatar">👨‍🏫</div>
+      <h3>Mr. Amit Sharma</h3>
+      <p>Mathematics & Quantitative Aptitude</p>
+    </div>
+
+    <div class="card faculty-card">
+      <div class="avatar">👨‍🏫</div>
+      <h3>Mr. Rahul Verma</h3>
+      <p>Accounts & Commerce</p>
+    </div>
+
+    <div class="card faculty-card">
+      <div class="avatar">👩‍🏫</div>
+      <h3>Ms. Priya Joshi</h3>
+      <p>English & General Studies</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="reviews" class="reviews">
+
+  <div class="section-title">
+    <h2>What Students Say</h2>
+    <p>Demo testimonials — replace with genuine student reviews.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>
+        “The teachers explain concepts clearly and make
+        difficult topics easier to understand.”
+      </p>
+      <br>
+      <strong>— Demo Student</strong>
+    </div>
+
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>
+        “A good environment for regular study, practice
+        and preparation.”
+      </p>
+      <br>
+      <strong>— Demo Student</strong>
+    </div>
+
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>
+        “The regular guidance and doubt support helped
+        me stay consistent with my preparation.”
+      </p>
+      <br>
+      <strong>— Demo Student</strong>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="section-title">
+    <h2>Gallery</h2>
+    <p>Replace these demo blocks with actual institute photos.</p>
+  </div>
+
+  <div class="gallery">
+    <div>Classroom Photo</div>
+    <div>Learning Session</div>
+    <div>Students</div>
+    <div>Institute Exterior</div>
+    <div>Study Session</div>
+    <div>Activities</div>
+  </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+  <div class="section-title">
+    <h2>Get In Touch</h2>
+    <p style="color:#b9c9df;">
+      Have questions about courses or admissions?
+    </p>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+
+      <h3>Delhi Classes Khatima</h3>
+
+      <p>📍 In front of Degree College, Khatima, Uttarakhand</p>
+
+      <p>📞 <a href="tel:+918433016603">8433016603</a></p>
+
+      <p>🕐 Mon – Sat: 7:00 AM – 7:00 PM</p>
+
+      <br>
+
+      <a class="btn primary"
+         href="https://wa.me/918433016603"
+         target="_blank">
+        WhatsApp Us
+      </a>
+
+    </div>
+
+    <div class="contact-card">
+
+      <h3>Enquiry</h3>
+
+      <p>
+        Interested students can contact the institute directly
+        for current courses, batches, fees and admission details.
+      </p>
+
+      <a class="btn primary"
+         href="tel:+918433016603">
+        Call Now
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Delhi Classes Khatima · Demo Website
+</footer>
+
+</body>
+  </html>
