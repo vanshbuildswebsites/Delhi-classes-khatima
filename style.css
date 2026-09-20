@@ -1,0 +1,593 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8fafc;
+  color: #172033;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+  background: rgba(255,255,255,.95);
+  border-bottom: 1px solid #e8edf3;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.logo span {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #172033;
+  color: white;
+  font-size: 14px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #e85d04;
+}
+
+.nav-btn,
+.primary-btn {
+  background: #e85d04;
+  color: white;
+  padding: 13px 21px;
+  border-radius: 8px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.nav-btn:hover,
+.primary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 26px;
+}
+
+
+/* HERO */
+
+.hero {
+  padding: 90px 0;
+  background: #eef3f8;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.badge {
+  display: inline-block;
+  background: white;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 6vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+.hero h1 span,
+.section-heading span,
+.about h2 span,
+.contact h2 span {
+  color: #e85d04;
+}
+
+.hero-content > p {
+  max-width: 590px;
+  margin: 25px 0;
+  color: #596579;
+  font-size: 17px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.secondary-btn {
+  padding: 12px 21px;
+  border: 1px solid #ccd4df;
+  border-radius: 8px;
+  font-weight: 700;
+  background: white;
+}
+
+.trust-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 38px;
+}
+
+.trust-row div {
+  display: flex;
+  flex-direction: column;
+}
+
+.trust-row strong {
+  font-size: 20px;
+}
+
+.trust-row small {
+  color: #718096;
+}
+
+
+/* HERO CARD */
+
+.hero-card {
+  min-height: 430px;
+  background: #172033;
+  border-radius: 28px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.teacher-placeholder {
+  text-align: center;
+  color: white;
+}
+
+.book-icon {
+  font-size: 90px;
+  margin-bottom: 15px;
+}
+
+.teacher-placeholder h3 {
+  font-size: 30px;
+}
+
+.teacher-placeholder p {
+  color: #c8d0dc;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: 0 15px 40px rgba(0,0,0,.2);
+}
+
+.top-card {
+  top: 35px;
+  left: 25px;
+}
+
+.bottom-card {
+  right: 25px;
+  bottom: 35px;
+}
+
+
+/* SECTIONS */
+
+.section {
+  padding: 100px 0;
+}
+
+.section-label {
+  color: #e85d04;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.about h2,
+.contact h2 {
+  font-size: 45px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
+.about p,
+.contact > p {
+  color: #657083;
+  margin-bottom: 18px;
+}
+
+.text-link {
+  color: #e85d04;
+  font-weight: 800;
+}
+
+
+/* COURSES */
+
+.courses {
+  background: #eef3f8;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: 45px;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.section-heading > p:last-child {
+  color: #687487;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.course-card {
+  background: white;
+  border: 1px solid #e1e7ee;
+  padding: 32px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(20,30,50,.08);
+}
+
+.course-card.featured {
+  border: 2px solid #e85d04;
+}
+
+.course-icon {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.course-card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.course-card p {
+  color: #6c7686;
+  margin-bottom: 25px;
+}
+
+.course-card a {
+  color: #e85d04;
+  font-weight: 800;
+}
+
+.popular {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  background: #e85d04;
+  color: white;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* FEATURES */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid #e4e9ef;
+}
+
+.feature > div {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #6c7686;
+  font-size: 14px;
+}
+
+
+/* CTA */
+
+.cta {
+  background: #e85d04;
+  color: white;
+  padding: 65px 0;
+}
+
+.cta .section-label {
+  color: white;
+}
+
+.cta h2 {
+  font-size: 45px;
+  line-height: 1.1;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.white-btn {
+  background: white;
+  color: #172033;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.contact-details {
+  margin-top: 35px;
+}
+
+.contact-details div {
+  margin-bottom: 22px;
+}
+
+.contact-details p {
+  color: #6c7686;
+}
+
+.contact-form {
+  background: white;
+  border: 1px solid #e1e7ee;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.contact-form h3 {
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 15px 0 7px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #d7dee7;
+  padding: 13px;
+  border-radius: 7px;
+  font: inherit;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #e85d04;
+}
+
+.contact-form button {
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 11px;
+  color: #8993a2;
+  margin-top: 12px;
+}
+
+
+/* FOOTER */
+
+footer {
+  background: #172033;
+  color: white;
+  padding: 50px 0 20px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+}
+
+.footer-inner p {
+  color: #aeb8c7;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #e85d04;
+}
+
+.copyright {
+  text-align: center;
+  color: #8490a2;
+  border-top: 1px solid #30394a;
+  margin-top: 35px;
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  nav,
+  .nav-btn {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav.active {
+    display: flex;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: white;
+    flex-direction: column;
+    gap: 18px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero-grid,
+  .two-column,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-card {
+    min-height: 330px;
+  }
+
+  .course-grid,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2,
+  .about h2,
+  .contact h2,
+  .cta h2 {
+    font-size: 36px;
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+
+  .trust-row {
+    gap: 20px;
+  }
+}
